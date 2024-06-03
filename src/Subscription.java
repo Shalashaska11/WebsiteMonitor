@@ -1,8 +1,7 @@
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Subscribtion {
-    private String subscribtionID;
+public class Subscription {
+    private String subscriptionID;
     private int frequency;
     private String url;
     private String channel;
