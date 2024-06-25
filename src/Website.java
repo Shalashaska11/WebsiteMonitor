@@ -1,37 +1,28 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.nio.channels.ScatteringByteChannel;
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
 
 public class Website {
-    private URI uri;
-    private LocalDateTime lastChecked;
-    private String websiteContent;
-    private boolean update;
+    private String url;
 
-    public Website(URI uri){
-        this.uri = uri;
-        checkForUpdates();
+    public Website(String url){
+        this.url = url;
     }
-    public void checkForUpdates(){
-        StringBuilder newWebsiteContent = new StringBuilder();
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(uri.toURL().openStream(), StandardCharsets.UTF_8))){
-                for (String line; (line = reader.readLine()) != null; ) {
-                    newWebsiteContent.append(line);
-                }
-        }catch(IOException e){
-            throw new RuntimeException(e);
+    public String getUrl() {
+        return url;
+    }
+    public String downloadContent() throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setRequestMethod("GET");
+        Scanner scanner = new Scanner(connection.getInputStream());
+        StringBuilder content = new StringBuilder();
+
+        while (scanner.hasNextLine()) {
+            content.append(scanner.nextLine());
         }
 
-        lastChecked = LocalDateTime.now();
-
-        if (!websiteContent.toString().equals(websiteContent)) update = true;
-        websiteContent = newWebsiteContent.toString();
-
+        return content.toString();
     }
 }

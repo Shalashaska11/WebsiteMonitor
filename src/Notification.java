@@ -1,10 +1,5 @@
 public class Notification {
-    private String notificationID;
-    private String userID;
-    private String message;
-    private String channel;
-
-    public void sendNotification(){
-        //todo
+    public static void sendmessage(User user, String message){
+        System.out.println("User: " + user.getName() + " Email: " + user.getEmail() + " /t Message: " + message);
     }
 }

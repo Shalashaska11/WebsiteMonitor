@@ -2,25 +2,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private String userID;
+    private String name;
     private String email;
-    private List<Subscription> SubscriptionList = new ArrayList<>();
+    private List<WebsiteSubscription> subscriptionList = new ArrayList<>();
 
-    public void addSubscribtion(Subscription subscription){
-        SubscriptionList.add(subscription);
+
+    public void addSubscriptions(WebsiteSubscription subscription){
+        subscriptionList.add(subscription);
     }
-    public void deleteSubscribtion(Subscription subscription){
-        SubscriptionList.remove(subscription);
+
+
+    public List<WebsiteSubscription> getSubscriptionList() {
+        return subscriptionList;
     }
-    public String getUserID() {
-        return userID;
-    }
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
-    public User(String UserId, String email, List<Subscription> SubscriptionList){
-        this.userID = getUserID();
-        this.email = getUserID();
-        this.SubscriptionList = SubscriptionList;
+    public String getName() {
+        return name;
+    }
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 }
