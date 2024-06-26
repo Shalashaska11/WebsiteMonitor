@@ -1,4 +1,8 @@
-public class ContentSizeComparisonStrategy implements ComparisonStrategy{
+package Comparison;
+
+import Comparison.ComparisonStrategy;
+
+public class ContentSizeComparisonStrategy implements ComparisonStrategy {
     
     
     //Compares a and b using the size

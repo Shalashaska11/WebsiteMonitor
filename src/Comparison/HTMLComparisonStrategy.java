@@ -1,3 +1,7 @@
+package Comparison;
+
+import Comparison.ComparisonStrategy;
+
 public class HTMLComparisonStrategy implements ComparisonStrategy {
     
     // compares a and b using the html 

@@ -1,3 +1,7 @@
+package Comparison;
+
+import Comparison.ComparisonStrategy;
+
 public class TextContentComparisonStrategy implements ComparisonStrategy {
     
     // removes everthing in the html code which is unnecessary

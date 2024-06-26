@@ -1,17 +1,17 @@
 public class Main {
     public static void main(String[] args) {
 
-        User geera = new User("Geera", "geera@swed.de");
+        User luca = new User("Luca", "luca@swed.de");
 
         Website website1 = new Website("https://github.com/");
         Website website2 = new Website("https://wttr.in/");
 
         Systems system = new Systems();
 
-        system.addUser(geera);
+        system.addUser(luca);
 
-        system.subscribe(geera, website1);
-        system.subscribe(geera, website2);
+        system.subscribe(luca, website1);
+        system.subscribe(luca, website2);
 
         // endless loop for update checks
         // Improve: User Input for frequency

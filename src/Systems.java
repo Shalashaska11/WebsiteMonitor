@@ -1,25 +1,31 @@
+import Comparison.ComparisonStrategy;
+//import Comparison.ContentSizeComparisonStrategy;
+//import Comparison.HTMLComparisonStrategy;
+import Comparison.TextContentComparisonStrategy;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Systems {
     private List<User> userList = new ArrayList<>();
-    private Notification notification = new Notification();
 
-    // comparison methods
-    private ComparisonStrategy htmlComparisonStrategy = new HTMLComparisonStrategy(); 
-    private ComparisonStrategy contentSizeComparisonStrategy = new ContentSizeComparisonStrategy();
+    //comparison methods
+    //private ComparisonStrategy htmlComparisonStrategy = new HTMLComparisonStrategy();
+    //private ComparisonStrategy contentSizeComparisonStrategy = new ContentSizeComparisonStrategy();
     private ComparisonStrategy textContentComparisonStrategy = new TextContentComparisonStrategy();
     
     public void addUser(User user){
         userList.add(user);
     }
+
     public void subscribe(User user, Website website) {
         WebsiteSubscription subscription = new WebsiteSubscription(website);
         user.addSubscriptions(subscription);
     }
-    // iterate userlist and the subscription list
-    // compares the old currentContent with the new downloaded content
+
+    //iterate userlist and the subscription list
+    //compares the old currentContent with the new downloaded content
     public void checkUpdate(){
         for (User user : userList) {
             for (WebsiteSubscription subscription : user.getSubscriptionList()) {

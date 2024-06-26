@@ -10,9 +10,8 @@ public class Website {
         this.url = url;
     }
 
-    public String getUrl() {
-        return url;
-    }
+
+    //Webcrawler
     public String downloadContent() throws IOException {
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
         connection.setRequestMethod("GET");
@@ -24,5 +23,8 @@ public class Website {
         }
 
         return content.toString();
+    }
+    public String getUrl() {
+        return url;
     }
 }
