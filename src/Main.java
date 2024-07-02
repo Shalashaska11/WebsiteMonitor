@@ -1,14 +1,22 @@
+import Comparison.ComparisonStrategy;
+import Comparison.ContentSizeComparisonStrategy;
+import Comparison.HTMLComparisonStrategy;
+
 public class Main {
     public static void main(String[] args) {
 
-        User luca = new User("Luca", "luca@swed.de");
-
+        User luca = new User("Luca", "luca@swed.de", new ContentSizeComparisonStrategy());
+        User mertkaan = new User("Mertkaan", "mertkaan@swed.de", new HTMLComparisonStrategy());
         Website website1 = new Website("https://github.com/");
         Website website2 = new Website("https://wttr.in/");
 
         Systems system = new Systems();
 
         system.addUser(luca);
+        system.addUser(mertkaan);
+
+        system.subscribe(mertkaan, website1);
+        system.subscribe(mertkaan, website2);
 
         system.subscribe(luca, website1);
         system.subscribe(luca, website2);

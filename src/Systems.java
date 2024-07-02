@@ -1,6 +1,6 @@
 import Comparison.ComparisonStrategy;
-//import Comparison.ContentSizeComparisonStrategy;
-//import Comparison.HTMLComparisonStrategy;
+import Comparison.ContentSizeComparisonStrategy;
+import Comparison.HTMLComparisonStrategy;
 import Comparison.TextContentComparisonStrategy;
 
 import java.io.IOException;
@@ -11,8 +11,8 @@ public class Systems {
     private List<User> userList = new ArrayList<>();
 
     //comparison methods
-    //private ComparisonStrategy htmlComparisonStrategy = new HTMLComparisonStrategy();
-    //private ComparisonStrategy contentSizeComparisonStrategy = new ContentSizeComparisonStrategy();
+    private ComparisonStrategy htmlComparisonStrategy = new HTMLComparisonStrategy();
+    private ComparisonStrategy contentSizeComparisonStrategy = new ContentSizeComparisonStrategy();
     private ComparisonStrategy textContentComparisonStrategy = new TextContentComparisonStrategy();
     
     public void addUser(User user){
