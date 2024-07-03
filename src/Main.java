@@ -23,7 +23,7 @@ public class Main {
 
         // endless loop for update checks
         // Improve: User Input for frequency
-        while (true) {
+        while(true) {
             system.checkUpdate();
             try {
                 Thread.sleep(1000);
@@ -36,7 +36,6 @@ public class Main {
 
 
 
-
 /*
 Coding Conventions:
 Camel Case
@@ -44,5 +43,6 @@ Invert if Refactoring
 
 Improve:
 not using nested loops
-DRY
- */
+modify users
+user interface
+*/
