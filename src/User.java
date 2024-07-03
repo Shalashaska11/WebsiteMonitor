@@ -24,9 +24,12 @@ public class User {
     public String getName() {
         return name;
     }
+    public ComparisonStrategy getStrategy() { return strategy; }
     public User(String name, String email, ComparisonStrategy strategy) {
         this.name = name;
         this.email = email;
         this.strategy = strategy;
     }
+
+
 }
