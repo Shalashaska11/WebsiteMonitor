@@ -1,3 +1,5 @@
+package System;
+
 import Comparison.ComparisonStrategy;
 
 import java.util.ArrayList;
@@ -12,6 +14,9 @@ public class User {
 
     public void addSubscriptions(WebsiteSubscription subscription){
         subscriptionList.add(subscription);
+    }
+    public void deleteSubscriptions(WebsiteSubscription subscription){
+        subscriptionList.remove(subscription);
     }
 
 

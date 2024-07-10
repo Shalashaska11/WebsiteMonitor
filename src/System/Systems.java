@@ -1,7 +1,4 @@
-import Comparison.ComparisonStrategy;
-import Comparison.ContentSizeComparisonStrategy;
-import Comparison.HTMLComparisonStrategy;
-import Comparison.TextContentComparisonStrategy;
+package System;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,10 +25,10 @@ public class Systems {
                     String currentContent = subscription.getWebsite().downloadContent();
                     if (!user.getStrategy().compare(currentContent,subscription.getWebsite().downloadContent())) {
                         subscription.setLastcontent(currentContent);
-                        Notification.sendmessage(user, "Website " + subscription.getWebsite().getUrl() + " has been updated.");
+                        Notification.sendmessage(user, "System.Website " + subscription.getWebsite().getUrl() + " has been updated.");
                     }
                 } catch (IOException e) {
-                    System.out.println("Error connecting to Website:" + subscription.getWebsite().getUrl());
+                    System.out.println("Error connecting to System.Website:" + subscription.getWebsite().getUrl());
                 }
             }
         }

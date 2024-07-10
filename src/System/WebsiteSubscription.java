@@ -1,3 +1,5 @@
+package System;
+
 public class WebsiteSubscription {
     private Website website;
     private int frequency;

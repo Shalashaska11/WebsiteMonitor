@@ -1,6 +1,10 @@
-import Comparison.ComparisonStrategy;
 import Comparison.ContentSizeComparisonStrategy;
 import Comparison.HTMLComparisonStrategy;
+//import Comparison.TextContentComparisonStrategy;
+import System.Systems;
+import System.Website;
+import System.User;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +26,7 @@ public class Main {
         system.subscribe(luca, website2);
 
         // endless loop for update checks
-        // Improve: User Input for frequency
+        // Improve: System.User Input for frequency
         while(true) {
             system.checkUpdate();
             try {
